@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">NavigationSample</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="fragment_one_label">Hello Fragment One</string>
     <string name="fragment_two_label">Hello Fragment Two</string>
+    <string name="go_to_fragment_two">Go to Fragment Two</string>
+    <string name="go_to_fragment_one">Go to Fragment One</string>
 </resources>

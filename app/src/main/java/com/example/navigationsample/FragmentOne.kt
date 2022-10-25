@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.navigationsample.databinding.FragmentOneBinding
 
 class FragmentOne : Fragment()
@@ -42,7 +44,10 @@ class FragmentOne : Fragment()
      */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
     {
-        super.onViewCreated(view, savedInstanceState)
+        binding.btnClickOne.setOnClickListener {
+            val action = FragmentOneDirections.actionFragmentOneToFragmentTwo()
+            findNavController().navigate(action)
+        }
     }
     
     /**

@@ -5,10 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".FragmentOne">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="@string/fragment_one_label" />
+
+    <Button
+        android:id="@+id/btn_click_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/go_to_fragment_two" />
 
 </FrameLayout>
