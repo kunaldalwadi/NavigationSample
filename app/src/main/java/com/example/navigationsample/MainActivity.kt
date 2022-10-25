@@ -25,9 +25,13 @@ class MainActivity : AppCompatActivity()
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fcv_fragment_container) as NavHostFragment
         navController = navHostFragment.navController
         
+        //updates the app bar along with changing fragment
         setupActionBarWithNavController(navController)
     }
     
+    /**
+     * This takes care of the back button from any fragment that is on the screen.
+     */
     override fun onSupportNavigateUp(): Boolean
     {
         return navController.navigateUp() || super.onSupportNavigateUp()
