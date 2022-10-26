@@ -27,18 +27,33 @@ class ExampleInstrumentedTest
     private lateinit var navController: TestNavHostController
     private lateinit var fragOneScenario: FragmentScenario<FragmentOne>
     
+    /**
+     *@Before tag is used to do something before every test starts.
+     * Anything annotated with @Before will before every test.
+     */
     @Before
     fun setup()
     {
+        //instantiate Test Nav Host Controller
+        //This controls the navigation between fragments
         navController = TestNavHostController(ApplicationProvider.getApplicationContext())
+        
+        //instantiate a scenario where you launch FragmentOne in a Container to keep it completely separate from the application
+        //this lets you access the fragment independent of an activity.
         fragOneScenario = launchFragmentInContainer<FragmentOne>(themeResId = R.style.Theme_NavigationSample)
         
+        //once we setup the fragment scenario where we launch the fragment in a container then we need to tell it how to behave
+        //hence we give it which nav graph to follow
         fragOneScenario.onFragment { fragment ->
             navController.setGraph(R.navigation.nav_graph)
             Navigation.setViewNavController(fragment.requireView(), navController)
         }
     }
     
+    /**
+     * this tests the navigation from one frag to the other by clicking the button on the frag one.
+     * the assertEquals check if the destination id after clicking the button matches the other one.
+     */
     @Test
     fun navigate_fragmentone_to_fragmenttwo()
     {
