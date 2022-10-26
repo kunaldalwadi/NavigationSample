@@ -22,5 +22,21 @@
         <action
             android:id="@+id/action_fragmentTwo_to_fragmentOne"
             app:destination="@id/fragmentOne" />
+        <action
+            android:id="@+id/action_fragmentTwo_to_fragmentThree"
+            app:destination="@id/fragmentThree" />
+        <action
+            android:id="@+id/action_fragmentTwo_to_fragmentFour"
+            app:destination="@id/fragmentFour" />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentThree"
+        android:name="com.example.navigationsample.FragmentThree"
+        android:label="@string/fragment_three_label"
+        tools:layout="@layout/fragment_three" />
+    <fragment
+        android:id="@+id/fragmentFour"
+        android:name="com.example.navigationsample.FragmentFour"
+        android:label="@string/fragment_four_label"
+        tools:layout="@layout/fragment_four" />
 </navigation>

@@ -2,6 +2,11 @@
     <string name="app_name">NavigationSample</string>
     <string name="fragment_one_label">Hello Fragment One</string>
     <string name="fragment_two_label">Hello Fragment Two</string>
+    <string name="fragment_three_label">Frag Three</string>
+    <string name="fragment_four_label">Frag Four</string>
     <string name="go_to_fragment_two">Go to Fragment Two</string>
     <string name="go_to_fragment_one">Go to Fragment One</string>
+    <string name="go_to_fragment_three">Go to Fragment Three</string>
+    <string name="go_to_fragment_four">Go to Fragment Four</string>
+
 </resources>

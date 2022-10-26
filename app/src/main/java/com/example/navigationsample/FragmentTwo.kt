@@ -47,6 +47,16 @@ class FragmentTwo : Fragment()
             val action = FragmentTwoDirections.actionFragmentTwoToFragmentOne()
             findNavController().navigate(action)
         }
+        
+        binding.btnClickThree.setOnClickListener {
+            val action = FragmentTwoDirections.actionFragmentTwoToFragmentThree()
+            findNavController().navigate(action)
+        }
+        
+        binding.btnClockFour.setOnClickListener {
+            val action = FragmentTwoDirections.actionFragmentTwoToFragmentFour()
+            findNavController().navigate(action)
+        }
     }
     
     /**
