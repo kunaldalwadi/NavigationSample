@@ -8,5 +8,7 @@
     <string name="go_to_fragment_one">Go to Fragment One</string>
     <string name="go_to_fragment_three">Go to Fragment Three</string>
     <string name="go_to_fragment_four">Go to Fragment Four</string>
+    <string name="txt_count">Count = %d</string>
+    <string name="clicker">Clicker</string>
 
 </resources>

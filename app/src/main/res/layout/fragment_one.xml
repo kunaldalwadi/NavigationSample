@@ -1,20 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".FragmentOne">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
+    <!-- This here when we add variable we are just defining it
+    we still havent connected them
+
+    To connect them you have to connect them in the view(Activity/Fragment)
+    In this app it is under Fragment onViewCreated
+
+    so if you want to use two way binding from xml you have to
+    1. not only define the variables in the xml
+    2. but also connect them in the View File-->
+    <data>
+        <variable
+            name="fragOneViewModel"
+            type="com.example.navigationsample.FragmentOneViewModel" />
+
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/fragment_one_label" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".FragmentOne">
 
-    <Button
-        android:id="@+id/btn_click_one"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/go_to_fragment_two" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_one_label" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btn_click_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/go_to_fragment_two" />
+
+        <LinearLayout
+            android:id="@+id/ll_frag_one_stuff"
+            android:orientation="vertical"
+            android:layout_marginTop="200dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- the android:text variable shows how to do two-way binding
+            using dataBinding feature
+            This does the exact same thing as the observer in Fragment-->
+            <TextView
+                android:id="@+id/tv_frag_one_counter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{@string/txt_count(fragOneViewModel.count)}"
+                tools:text="Count = 3" />
+
+            <Button
+                android:id="@+id/btn_frag_one_clicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/clicker" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
