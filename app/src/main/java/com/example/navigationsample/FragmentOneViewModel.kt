@@ -26,7 +26,9 @@ class FragmentOneViewModel : ViewModel()
     val count: LiveData<Int> get() = _count
     
     /**
-     * Updates the counter on the screen
+     * Updates the counter value and keeps it here.
+     * to show this on screen this function will be accessed by some view(activity/fragment)
+     * and displayed from that view on to the screen.
      */
     fun updateCounter()
     {
